@@ -277,7 +277,7 @@ export default function UniversityStudentAgent() {
               <div className="bg-gray-50 p-4 rounded-lg">
                 <h4 className="font-medium text-gray-900 mb-2">Plugin URL:</h4>
                 <code className="text-sm bg-white p-2 rounded border block break-all">
-                  {`${window.location.origin}/.well-known/ai-plugin.json`}
+                  {typeof window !== 'undefined' ? `${window.location.origin}/.well-known/ai-plugin.json` : ''}
                 </code>
               </div>
               <div className="text-sm text-gray-600">
@@ -301,7 +301,7 @@ export default function UniversityStudentAgent() {
               <div className="bg-gray-50 p-4 rounded-lg">
                 <h4 className="font-medium text-gray-900 mb-2">MCP Server URL:</h4>
                 <code className="text-sm bg-white p-2 rounded border block break-all">
-                  {`${window.location.origin}/api/mcp`}
+                  {typeof window !== 'undefined' ? `${window.location.origin}/api/mcp` : ''}
                 </code>
               </div>
               <div className="text-sm text-gray-600">
@@ -310,7 +310,7 @@ export default function UniversityStudentAgent() {
                   {`{
   "mcpServers": {
     "university-assistant": {
-      "url": "${window.location.origin}/api/mcp"
+      "url": "${typeof window !== 'undefined' ? window.location.origin : ''}/api/mcp"
     }
   }
 }`}
