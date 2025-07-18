@@ -277,7 +277,7 @@ export default function UniversityStudentAgent() {
               <div className="bg-gray-50 p-4 rounded-lg">
                 <h4 className="font-medium text-gray-900 mb-2">Plugin URL:</h4>
                 <code className="text-sm bg-white p-2 rounded border block break-all">
-                  https://your-app.vercel.app/.well-known/ai-plugin.json
+                  {`${window.location.origin}/.well-known/ai-plugin.json`}
                 </code>
               </div>
               <div className="text-sm text-gray-600">
@@ -301,7 +301,7 @@ export default function UniversityStudentAgent() {
               <div className="bg-gray-50 p-4 rounded-lg">
                 <h4 className="font-medium text-gray-900 mb-2">MCP Server URL:</h4>
                 <code className="text-sm bg-white p-2 rounded border block break-all">
-                  https://your-app.vercel.app/api/mcp
+                  {`${window.location.origin}/api/mcp`}
                 </code>
               </div>
               <div className="text-sm text-gray-600">
@@ -310,7 +310,7 @@ export default function UniversityStudentAgent() {
                   {`{
   "mcpServers": {
     "university-assistant": {
-      "url": "https://your-app.vercel.app/api/mcp"
+      "url": "${window.location.origin}/api/mcp"
     }
   }
 }`}
